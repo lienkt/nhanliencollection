@@ -3,92 +3,336 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ảnh cưới của Nhân & Liên</title>
+    <link
+      rel="icon"
+      href="assets/img/graffiti-heart-shape.png"
+      type="image/svg+xml"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <title>Nhân & Liên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta
       name="description"
       content="Bộ sưu tập ảnh cưới của Nhân và Liên - khoảnh khắc đẹp và ý nghĩa."
     />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 1rem;
-        background: #fafafa;
-        color: #333;
-      }
-      header,
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #f2f2f2;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-      }
-      h1 {
+      * {
         margin: 0;
-        font-size: 2rem;
-        color: #5a3e36;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .post-date {
-        color: #888;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+      html {
+        font-size: 16px; /* 1rem = 16px */
       }
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1rem;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        object-fit: cover;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-      .gallery img:hover {
-        transform: scale(1.05);
-      }
-      article p {
+      body {
+        font-family: "Poppins", sans-serif;
         line-height: 1.6;
-        margin-top: 1rem;
-        font-size: 1rem;
+        color: #3a3a3a;
+      }
+      .font-parisienne {
+        font-family: "Parisienne", cursive;
+      }
+      @font-face {
+        font-family: "The Wedding Signature Regular";
+        font-style: normal;
+        font-weight: normal;
+        src: local("The Wedding Signature Regular"),
+          url("assets/fonts/TheWeddingSignatureRegular-BWZ55.woff")
+            format("woff");
+      }
+      .font-wedding-signature {
+        font-family: "The Wedding Signature Regular", sans-serif;
+      }
+      @font-face {
+        font-family: "Brightons";
+        src: url("assets/fonts/BrightonsRegular.woff2") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .font-brightons {
+        font-family: "Brightons", serif;
+      }
+
+      @layer base {
+        html {
+          font-size: 14px;
+        }
+
+        @screen sm {
+          html {
+            font-size: 15px;
+          }
+        }
+
+        @screen md {
+          html {
+            font-size: 16px;
+          }
+        }
+
+        @screen lg {
+          html {
+            font-size: 17px;
+          }
+        }
+
+        @screen xl {
+          html {
+            font-size: 18px;
+          }
+        }
+
+        @screen 2xl {
+          html {
+            font-size: 19px;
+          }
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Ảnh cưới của Nhân & Liên</h1>
+    <header class="fixed top-0 z-10 w-full flex justify-center px-2 bg-white">
+      <div
+        class="my-5 bg-white border border-gray-300 rounded-full shadow-md shadow-gray-200/30 px-6 py-3 flex items-center justify-between gap-6 w-full max-w-screen-lg"
+      >
+        <!-- Logo -->
+        <a
+          href="./"
+          aria-label="Homepage"
+          class="flex items-center gap-3 text-black no-underline font-serif font-semibold text-lg"
+        >
+          <p class="italic">Our Albums</p>
+          <div class="flex items-center w-[29px] rounded-full overflow-hidden">
+            ❤
+          </div>
+        </a>
+
+        <!-- Hamburger button -->
+        <button
+          id="menuToggle"
+          class="sm:hidden text-2xl text-black focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <nav class="hidden sm:block" aria-label="Main Navigation">
+          <ul class="flex items-center gap-x-6 sm:gap-x-3 list-none">
+            <li>
+              <a
+                href="#prewedding"
+                class="text-black no-underline font-medium text-base"
+                >Pre-Wedding</a
+              >
+            </li>
+            <li>
+              <a
+                href="#bdwedding"
+                class="text-black no-underline font-medium text-base"
+                >BD-Wedding</a
+              >
+            </li>
+            <li>
+              <a
+                href="#qnwedding"
+                class="text-black no-underline font-medium text-base"
+                >QN-Wedding</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="absolute top-[70px] right-2 mt-2 w-48 bg-[#eae6e2] shadow-md rounded-md sm:hidden hidden"
+        >
+          <ul class="flex flex-col py-3 px-4 gap-2">
+            <li>
+              <a href="#prewedding" class="block text-black">Pre-Wedding</a>
+            </li>
+            <li>
+              <a href="#bdwedding" class="block text-black">BD-Wedding</a>
+            </li>
+            <li>
+              <a href="#qnwedding" class="block text-black">QN-Wedding</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <article>
-        <time datetime="2025-07-01" class="post-date"
-          >Ngày đăng: 1 tháng 7, 2025</time
+    <main class="h-[5000px] mt-[100px]">
+      <section class="mt-[100px] bg-[#eae6e2]">
+        <div
+          class="my-8 md:h-[50vh] md:min-h-[28rem] flex flex-col md:flex-row md:justify-end items-start bg-cream overflow-hidden relative"
         >
-        <p>
-          Đây là bộ sưu tập những khoảnh khắc đáng nhớ trong ngày cưới của chúng
-          tôi. Mong rằng mỗi bức ảnh sẽ kể một câu chuyện về tình yêu và hạnh
-          phúc của chúng tôi.
-        </p>
-      </article>
+          <!-- Text block -->
+          <div
+            class="bg-white p-8 pb-4 m-10 md:m-0 md:absolute md:h-[25rem] 2xl:h-[27rem] xl:w-[37.5rem] 2xl:w-[46rem] md:top-1/2 md:translate-y-[-50%] md:right-1/2 overflow-hidden"
+          >
+            <h3
+              class="text-2xl md:text-2xl xl:text-3xl 2xl:text-4xl font-brightons font-semibold mb-4"
+            >
+              Our Pre-Wedding Story
+            </h3>
+            <div
+              id="textContent"
+              class="my-4 2xl:my-6 overflow-hidden pr-2 max-h-[18rem] md:max-h-[16rem] md:h-[16rem] 2xl:max-h-[20rem] 2xl:h-[20rem] transition-all duration-500 ease-in-out"
+            >
+              <p class="text-base leading-relaxed text-gray-700">
+                On April 3rd, 2025, we returned to Paris from Brussels to
+                capture a very special moment — our pre-wedding photos.
+                <br /><br />
+                It marked 10 years of love, both of us turning 30, and having
+                our baby. Paris has always been a place full of memories — from
+                our student days to now as a family.
+                <br /><br />
+                This city witnessed many milestones in our lives. We both
+                studied here — my husband started his Master’s at 23, and I
+                joined him later for my own studies while he pursued his PhD.
+                Despite the pandemic in 2020, we shared unforgettable years
+                together in this beautiful city.
+                <br /><br />
+                Paris is also where we officially registered our marriage at the
+                Vietnamese Embassy. Returning this time, not just as a couple
+                but as parents with our 7-month-old son, felt like closing a
+                beautiful full circle.
+                <br /><br />
+                This photo session is more than a keepsake — it’s our way of
+                celebrating a journey of love, growth, and meaningful
+                milestones.
+              </p>
+            </div>
+            <!-- Read More Button -->
+            <button
+              id="readMoreBtn"
+              class="md:absolute h-12 bottom-0 left-0 w-full bg-white text-sm text-gray-600 font-medium py-2"
+            >
+              Read more
+            </button>
+          </div>
 
-      <section class="gallery" aria-label="Bộ sưu tập ảnh cưới">
-        <img src="wedding1.jpg" alt="Ảnh cưới Nhân và Liên tại công viên" />
-        <img
-          src="wedding2.jpg"
-          alt="Ảnh cưới Nhân và Liên dưới ánh hoàng hôn"
-        />
-        <img src="wedding3.jpg" alt="Ảnh cưới Nhân và Liên bên hồ nước" />
-        <img src="wedding4.jpg" alt="Ảnh cưới Nhân và Liên cùng gia đình" />
+          <!-- Image block -->
+          <div class="w-full md:w-2/3 h-full overflow-hidden">
+            <img
+              loading="lazy"
+              src="assets/img/LK_01685.jpg"
+              alt="Pre-wedding photo"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-150"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="gallery flex justify-center"
+        aria-label="pre-wedding-trocadero"
+      >
+        <div class="flex max-w-screen-lg">
+          <div class="w-1/2 overflow-hidden">
+            <img
+              src="assets/img/testing/LK_01505.jpg"
+              alt=""
+              class="transition-transform duration-500 ease-in-out hover:scale-150"
+            />
+          </div>
+
+          <article class="w-1/2 flex items-center justify-center">
+            <div class="text-center px-12">
+              <p class="text-8xl mb-2 font-wedding-signature">
+                A Morning at Trocadéro
+              </p>
+              <time
+                datetime="2025-07-01"
+                class="block text-sm text-gray-500 mb-4"
+                >03/04/2025</time
+              >
+              <p class="text-base text-justify text-gray-700">
+                Early morning at Trocadéro. Clean light, open space, and the
+                city still half-asleep. Paris at its calmest.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Nhân & Liên. Bản quyền hình ảnh được bảo vệ.</p>
+    <footer id="contact" class="text-center py-8 bg-[#413632] text-white">
+      <p class="mb-5 text-lg">Let’s collaborate and create something great!</p>
+      <a
+        href="mailto:lienkt0110@gmail.com"
+        class="inline-block bg-white text-gray-800 px-5 py-2 rounded-md text-base no-underline"
+      >
+        Email me
+      </a>
+      <p class="mt-6 text-sm">© 2025 Lien KIM. All Rights Reserved.</p>
     </footer>
+    <script>
+      const toggleButton = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuLinks = mobileMenu.querySelectorAll("a");
+
+      toggleButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      const isSmOrSmaller = window.matchMedia("(max-width: 767px)").matches;
+
+      const textContent = document.getElementById("textContent");
+      const readMoreBtn = document.getElementById("readMoreBtn");
+
+      function checkOverflow() {
+        const isOverflowing =
+          textContent.scrollHeight > textContent.clientHeight;
+        readMoreBtn.style.display = isOverflowing ? "block" : "none";
+      }
+
+      let expanded = false;
+      let maxHeight = "max-h-[30vh]";
+      let overflowY = "overflow-y-auto";
+      if (isSmOrSmaller) {
+        maxHeight = "max-h-none";
+        overflowY = "";
+      }
+      readMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        if (expanded) {
+          textContent.classList.remove("overflow-hidden");
+          textContent.classList.add(maxHeight);
+          readMoreBtn.textContent = "Read less";
+          if (overflowY) {
+            textContent.classList.add(overflowY);
+          }
+        } else {
+          textContent.classList.add("overflow-hidden");
+          textContent.classList.remove(maxHeight);
+          readMoreBtn.textContent = "Read more";
+          if (overflowY) {
+            textContent.classList.remove(overflowY);
+          }
+          // Scroll to top of the container
+          textContent.scrollTop = 0;
+        }
+      });
+
+      // Call when DOM is loaded
+      window.addEventListener("load", checkOverflow);
+      window.addEventListener("resize", checkOverflow);
+    </script>
   </body>
 </html>

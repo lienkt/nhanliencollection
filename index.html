@@ -18,84 +18,8 @@
     />
     <title>Nhân & Liên</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta
-      name="description"
-      content="Bộ sưu tập ảnh cưới của Nhân và Liên - khoảnh khắc đẹp và ý nghĩa."
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        font-size: 16px; /* 1rem = 16px */
-      }
-      body {
-        font-family: "Poppins", sans-serif;
-        line-height: 1.6;
-        color: #3a3a3a;
-      }
-      .font-parisienne {
-        font-family: "Parisienne", cursive;
-      }
-      @font-face {
-        font-family: "The Wedding Signature Regular";
-        font-style: normal;
-        font-weight: normal;
-        src: local("The Wedding Signature Regular"),
-          url("assets/fonts/TheWeddingSignatureRegular-BWZ55.woff")
-            format("woff");
-      }
-      .font-wedding-signature {
-        font-family: "The Wedding Signature Regular", sans-serif;
-      }
-      @font-face {
-        font-family: "Brightons";
-        src: url("assets/fonts/BrightonsRegular.woff2") format("opentype");
-        font-weight: normal;
-        font-style: normal;
-      }
-      .font-brightons {
-        font-family: "Brightons", serif;
-      }
-
-      @layer base {
-        html {
-          font-size: 14px;
-        }
-
-        @screen sm {
-          html {
-            font-size: 15px;
-          }
-        }
-
-        @screen md {
-          html {
-            font-size: 16px;
-          }
-        }
-
-        @screen lg {
-          html {
-            font-size: 17px;
-          }
-        }
-
-        @screen xl {
-          html {
-            font-size: 18px;
-          }
-        }
-
-        @screen 2xl {
-          html {
-            font-size: 19px;
-          }
-        }
-      }
-    </style>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header class="fixed top-0 z-10 w-full flex justify-center px-2 bg-white">
@@ -137,14 +61,14 @@
               <a
                 href="#bdwedding"
                 class="text-black no-underline font-medium text-base"
-                >Engagement</a
+                >Binh Duong Wedding</a
               >
             </li>
             <li>
               <a
                 href="#qnwedding"
                 class="text-black no-underline font-medium text-base"
-                >Wedding</a
+                >Quy Nhon Wedding</a
               >
             </li>
           </ul>
@@ -170,8 +94,9 @@
       </div>
     </header>
 
-    <main class="h-[5000px] mt-[100px]">
-      <section class="mt-[100px] bg-[#eae6e2]">
+    <main class="mt-[100px]">
+      <!-- Pre Wedding -->
+      <section id="prewedding" class="mt-[100px] bg-[#eae6e2]">
         <div
           class="my-8 md:h-[50vh] md:min-h-[28rem] flex flex-col md:flex-row md:justify-end items-start bg-cream overflow-hidden relative"
         >
@@ -185,7 +110,7 @@
               Our Pre-Wedding Story
             </h3>
             <div
-              id="textContent"
+              id="textContentPrewed"
               class="my-4 2xl:my-6 overflow-hidden pr-2 max-h-[18rem] md:max-h-[16rem] md:h-[16rem] 2xl:max-h-[20rem] 2xl:h-[20rem] transition-all duration-500 ease-in-out"
             >
               <p class="text-base leading-relaxed text-gray-700">
@@ -232,6 +157,7 @@
           </div>
         </div>
       </section>
+      <!-- Pre Wedding video -->
       <section
         class="gallery flex justify-center"
         aria-label="pre-wedding-trocadero"
@@ -247,7 +173,7 @@
           </div>
         </div>
       </section>
-      <section
+      <!-- <section
         class="gallery flex justify-center"
         aria-label="pre-wedding-trocadero"
       >
@@ -261,9 +187,73 @@
             ></iframe>
           </div>
         </div>
+      </section> -->
+
+      <!-- Pre Wedding img -->
+      <section
+        class="mt-[50px] gallery flex justify-center bg-[#1e1e1e]"
+        aria-label=""
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              id="previewPreWed"
+              src=""
+              alt="Google Drive Image"
+              class="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#1e1e1e]">
+        <div class="w-full p-4 relative">
+          <!-- Gallery wrapper -->
+          <div
+            id="galleryPreWed"
+            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+          ></div>
+          <!-- Back button -->
+          <button
+            id="prevBtnPreWed"
+            class="absolute top-1/2 left-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Next button -->
+          <button
+            id="nextBtnPreWed"
+            class="absolute top-1/2 right-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
       </section>
 
-      <section class="mt-[100px] bg-[#eae6e2]">
+      <!-- BD Wedding -->
+      <section id="bdwedding" class="scroll-mt-50 mt-[50px] bg-[#eae6e2]">
         <div
           class="my-8 md:h-[50vh] md:min-h-[28rem] flex flex-col md:flex-row md:justify-end items-start bg-cream overflow-hidden relative"
         >
@@ -275,7 +265,7 @@
               <h3
                 class="text-2xl md:text-2xl xl:text-3xl 2xl:text-4xl font-brightons font-semibold mb-4"
               >
-                Engagement Ceremony
+                Binh Duong Wedding
               </h3>
               <div
                 id="textContent"
@@ -285,13 +275,6 @@
                   2/8/2025 <br />3/8/2025
                 </p>
               </div>
-              <!-- Read More Button -->
-              <!-- <button
-              id="readMoreBtn"
-              class="md:absolute h-12 bottom-0 left-0 w-full bg-white text-sm text-gray-600 font-medium py-2"
-            >
-              Read more
-            </button> -->
             </div>
           </div>
 
@@ -306,6 +289,8 @@
           </div>
         </div>
       </section>
+
+      <!-- BD Wedding video -->
       <section
         class="gallery flex justify-center"
         aria-label="pre-wedding-trocadero"
@@ -321,9 +306,321 @@
           </div>
         </div>
       </section>
+      <!-- BD Wedding 0208 -->
+      <section
+        class="mt-[50px] gallery flex justify-center bg-[#1e1e1e]"
+        aria-label=""
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              id="preview0208"
+              src=""
+              alt="Google Drive Image"
+              class="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#1e1e1e]">
+        <!-- <img
+          src="https://drive.google.com/thumbnail?id=1LydMO16Jec6wwBYVuhTeqd7WYqo74-tG&sz=w1600"
+          data-id="1LydMO16Jec6wwBYVuhTeqd7WYqo74-tG"
+          class="h-50 object-cover rounded cursor-pointer hover:opacity-75"
+        /> -->
+        <div class="w-full p-4 relative">
+          <!-- Gallery wrapper -->
+          <div
+            id="gallery0208"
+            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+          ></div>
+          <!-- Back button -->
+          <button
+            id="prevBtn0208"
+            class="absolute top-1/2 left-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Next button -->
+          <button
+            id="nextBtn0208"
+            class="absolute top-1/2 right-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- BD Wedding 0308 -->
+      <section
+        class="mt-[50px] gallery flex justify-center bg-[#1e1e1e]"
+        aria-label=""
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              id="preview0308"
+              src=""
+              alt="Google Drive Image"
+              class="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#1e1e1e]">
+        <div class="w-full p-4 relative">
+          <!-- Gallery wrapper -->
+          <div
+            id="gallery0308"
+            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+          ></div>
+          <!-- Back button -->
+          <button
+            id="prevBtn0308"
+            class="absolute top-1/2 left-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Next button -->
+          <button
+            id="nextBtn0308"
+            class="absolute top-1/2 right-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Quy Nhon Wedding  -->
+      <section id="qnwedding" class="scroll-mt-50 mt-[50px] bg-[#eae6e2]">
+        <div
+          class="my-8 md:h-[50vh] md:min-h-[28rem] flex flex-col md:flex-row md:justify-end items-start bg-cream overflow-hidden relative"
+        >
+          <!-- Text block -->
+          <div class="flex justify-center w-full md:w-1/3">
+            <div
+              class="w-full bg-white p-8 pb-4 m-10 md:w-[27rem] overflow-hidden"
+            >
+              <h3
+                class="text-2xl md:text-2xl xl:text-3xl 2xl:text-4xl font-brightons font-semibold mb-4"
+              >
+                Quy Nhon Wedding
+              </h3>
+              <div
+                id="textContent"
+                class="my-4 2xl:my-6 overflow-hidden pr-2 max-h-[18rem] md:max-h-[16rem] md:h-[16rem] 2xl:max-h-[20rem] 2xl:h-[20rem] transition-all duration-500 ease-in-out"
+              >
+                <p class="text-base leading-relaxed text-gray-700">10/8/2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image block -->
+          <div class="w-full md:w-2/3 h-full overflow-hidden">
+            <img
+              loading="lazy"
+              src="assets/img/DSC04982.jpg"
+              alt="Pre-wedding photo"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-150"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Quy Nhon Wedding video  -->
+      <!-- <section
+        class="gallery flex justify-center"
+        aria-label="pre-wedding-trocadero"
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/UnRQV6H3HDw"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Quy Nhon Wedding morning  -->
+      <section
+        class="mt-[50px] gallery flex justify-center bg-[#1e1e1e]"
+        aria-label=""
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              id="preview1008Morning"
+              src=""
+              alt="Google Drive Image"
+              class="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#1e1e1e]">
+        <div class="w-full p-4 relative">
+          <!-- Gallery wrapper -->
+          <div
+            id="gallery1008Morning"
+            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+          ></div>
+          <!-- Back button -->
+          <button
+            id="prevBtn1008Morning"
+            class="absolute top-1/2 left-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Next button -->
+          <button
+            id="nextBtn1008Morning"
+            class="absolute top-1/2 right-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Quy Nhon Wedding night  -->
+      <section
+        class="mt-[50px] gallery flex justify-center bg-[#1e1e1e]"
+        aria-label=""
+      >
+        <div class="flex max-w-screen-lg w-full p-4">
+          <div class="relative w-full pb-[56.25%]">
+            <iframe
+              id="preview1008Night"
+              src=""
+              alt="Google Drive Image"
+              class="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#1e1e1e]">
+        <div class="w-full p-4 relative">
+          <!-- Gallery wrapper -->
+          <div
+            id="gallery1008Night"
+            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+          ></div>
+          <!-- Back button -->
+          <button
+            id="prevBtn1008Night"
+            class="absolute top-1/2 left-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Next button -->
+          <button
+            id="nextBtn1008Night"
+            class="absolute top-1/2 right-4 -translate-y-1/2 text-white px-3 py-3 border-2 border-black rounded-full"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </section>
     </main>
 
-    <footer id="contact" class="text-center py-8 bg-[#413632] text-white">
+    <footer
+      id="contact"
+      class="mt-[100px] text-center py-8 bg-[#1e1e1e] text-white"
+    >
       <p class="mb-5 text-lg">Thank you for watching!</p>
       <a
         href="mailto:lienkt0110@gmail.com"
@@ -333,63 +630,6 @@
       </a>
       <p class="mt-6 text-sm">© 2025 Lien KIM. All Rights Reserved.</p>
     </footer>
-    <script>
-      const toggleButton = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const menuLinks = mobileMenu.querySelectorAll("a");
-
-      toggleButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      menuLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-      });
-
-      const isSmOrSmaller = window.matchMedia("(max-width: 767px)").matches;
-
-      const textContent = document.getElementById("textContent");
-      const readMoreBtn = document.getElementById("readMoreBtn");
-
-      function checkOverflow() {
-        const isOverflowing =
-          textContent.scrollHeight > textContent.clientHeight;
-        readMoreBtn.style.display = isOverflowing ? "block" : "none";
-      }
-
-      let expanded = false;
-      let maxHeight = "max-h-[30vh]";
-      let overflowY = "overflow-y-auto";
-      if (isSmOrSmaller) {
-        maxHeight = "max-h-none";
-        overflowY = "";
-      }
-      readMoreBtn.addEventListener("click", () => {
-        expanded = !expanded;
-        if (expanded) {
-          textContent.classList.remove("overflow-hidden");
-          textContent.classList.add(maxHeight);
-          readMoreBtn.textContent = "Read less";
-          if (overflowY) {
-            textContent.classList.add(overflowY);
-          }
-        } else {
-          textContent.classList.add("overflow-hidden");
-          textContent.classList.remove(maxHeight);
-          readMoreBtn.textContent = "Read more";
-          if (overflowY) {
-            textContent.classList.remove(overflowY);
-          }
-          // Scroll to top of the container
-          textContent.scrollTop = 0;
-        }
-      });
-
-      // Call when DOM is loaded
-      window.addEventListener("load", checkOverflow);
-      window.addEventListener("resize", checkOverflow);
-    </script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

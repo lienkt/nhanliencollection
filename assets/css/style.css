@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+.font-parisienne {
+  font-family: "Parisienne", cursive;
+}
+@font-face {
+  font-family: "The Wedding Signature Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("The Wedding Signature Regular"),
+    url("assets/fonts/TheWeddingSignatureRegular-BWZ55.woff") format("woff");
+}
+.font-wedding-signature {
+  font-family: "The Wedding Signature Regular", sans-serif;
+}
+@font-face {
+  font-family: "Brightons";
+  src: url("assets/fonts/BrightonsRegular.woff2") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.font-brightons {
+  font-family: "Brightons", serif;
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+  }
+
+  @screen sm {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @screen md {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @screen lg {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @screen xl {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @screen 2xl {
+    html {
+      font-size: 19px;
+    }
+  }
+}
+/* Ẩn thanh scroll ngang */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
